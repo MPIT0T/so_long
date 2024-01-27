@@ -5,43 +5,45 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mpitot <mpitot@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/01/27 14:28:25 by mpitot            #+#    #+#              #
-#    Updated: 2024/01/27 14:47:31 by mpitot           ###   ########.fr        #
+#    Created: 2023/12/15 17:42:43 by mpitot            #+#    #+#              #
+#    Updated: 2023/12/20 13:33:03 by mpitot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	=	main.c
+SRCS	=	ft_printf.c	\
+ft_putchar.c	\
+ft_putnbr.c		\
+ft_putnbr_u.c	\
+ft_putstr.c		\
+ft_putnbr_x.c	\
+ft_putmem.c
 
 OBJS	=	${SRCS:.c=.o}
 
-NAME	=	so_long
+HEADER	=	ft_printf.h
+
+NAME	=	libftprintf.a
 
 CC		=	cc
 
-CFLAGS	=	-Wall -Wextra -Werror #-g3
+AR		=	ar -rc
 
-HEADER	=	so_long.h
+FLAGS	=	-Wall -Wextra -Werror
 
 all		:	${NAME}
 
-%.c		:	%.o ${HEADER} libft/libft.h printf/ft_printf.h
-	${CC} ${CFLAGS} -I/usr/include -Imlx_linux -O3 -c $< -o $@
+%.o		:	%.c ${HEADER}
+	${CC} ${FLAGS} -c $< -o $@
 
 ${NAME}	:	${OBJS} Makefile
-	make -C ./libft
-	make -C ./printf
-	${CC} ${CFLAGS} -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -L./libft -lft -L./printf -lftprintf -o ${NAME}
+	${AR} ${NAME} ${OBJS}
 
 clean	:
-	make clean -C ./libft
-	make clean -C ./printf
 	rm -f ${OBJS}
 
 fclean	:	clean
-	make fclean -C ./libft
-	make fclean -C ./printf
 	rm -f ${NAME}
 
 re		:	fclean all
 
-.PHONY	:	all clean fclean re
+.PHONY	:	all clean fclean re bonus
