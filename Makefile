@@ -6,13 +6,15 @@
 #    By: mpitot <mpitot@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/27 14:28:25 by mpitot            #+#    #+#              #
-#    Updated: 2024/01/27 14:47:31 by mpitot           ###   ########.fr        #
+#    Updated: 2024/01/30 14:41:13 by mpitot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	=	main.c
 
-OBJS	=	${SRCS:.c=.o}
+OBJS	=	${SRCS:%.c=${OBJ_D}%.o}
+
+OBJ_D	=	objs/
 
 NAME	=	so_long
 
@@ -24,22 +26,24 @@ HEADER	=	so_long.h
 
 all		:	${NAME}
 
-%.c		:	%.o ${HEADER} libft/libft.h printf/ft_printf.h
-	${CC} ${CFLAGS} -I/usr/include -Imlx_linux -O3 -c $< -o $@
+${OBJS}	:	${OBJ_D}%.o: %.c libft/libft.h
+			${CC} ${CFLAGS} -I/usr/include -Imlx_linux -O3 -c $< -o $@
 
-${NAME}	:	${OBJS} Makefile
+${NAME}	:	${OBJ_D} ${OBJS} Makefile
 	make -C ./libft
-	make -C ./printf
-	${CC} ${CFLAGS} -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -L./libft -lft -L./printf -lftprintf -o ${NAME}
+	make -C ./mlx_linux
+	${CC} ${CFLAGS} ${OBJS} -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -L./libft -lft -o ${NAME}
+
+${OBJ_D}:
+	@mkdir -p ${OBJ_D}
 
 clean	:
 	make clean -C ./libft
-	make clean -C ./printf
-	rm -f ${OBJS}
+	make clean -C ./mlx_linux
+	rm -rf ${OBJ_D}
 
 fclean	:	clean
 	make fclean -C ./libft
-	make fclean -C ./printf
 	rm -f ${NAME}
 
 re		:	fclean all
