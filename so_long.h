@@ -6,14 +6,14 @@
 /*   By: mpitot <mpitot@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 14:24:16 by mpitot            #+#    #+#             */
-/*   Updated: 2024/01/30 15:17:18 by mpitot           ###   ########.fr       */
+/*   Updated: 2024/02/13 16:00:15 by mpitot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "libft/libft.h"
+# include "libft/incs/libft.h"
 # include <stdbool.h>
 # include "mlx_linux/mlx.h"
 # include "mlx_linux/mlx_int.h"
@@ -28,8 +28,10 @@ typedef struct s_player
 
 typedef struct	s_map
 {
-	size_t	x;
-	size_t	y;
+	size_t	line_len;
+	size_t	line_count;
+	size_t	player_x;
+	size_t	player_y;
 	char	**map;
 	bool	door_open;
 

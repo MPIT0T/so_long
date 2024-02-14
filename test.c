@@ -1,0 +1,13 @@
+while
+int
+long
+char
+unsigned
+const
+goto
+break
+if
+else
+return
+for
+sizeof
