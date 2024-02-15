@@ -6,7 +6,7 @@
 /*   By: mpitot <mpitot@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 14:24:16 by mpitot            #+#    #+#             */
-/*   Updated: 2024/02/15 13:44:22 by mpitot           ###   ########.fr       */
+/*   Updated: 2024/02/15 17:12:30 by mpitot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,6 @@
 # include <stdbool.h>
 # include "../mlx_linux/mlx.h"
 # include "../mlx_linux/mlx_int.h"
-
-typedef struct s_player
-{
-	size_t	x;
-	size_t	y;
-	int		facing;
-	char	*image;
-}	t_player;
 
 typedef struct	s_map
 {
@@ -37,12 +29,22 @@ typedef struct	s_map
 
 }	t_map;
 
-typedef struct	s_collectible
+typedef struct	s_data
 {
-	size_t	x;
-	size_t	y;
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+}	t_data;
 
-}	t_collectible;
+typedef struct	s_vars
+{
+	void	*mlx;
+	void	*mlx_win;
+	t_data	img;
+	t_map	map;
+}	t_vars;
 
 int		ft_parse(const char *path, t_map *map);
 int	ft_solvable(t_map *map);

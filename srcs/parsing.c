@@ -94,7 +94,6 @@ int	ft_parse(const char *path, t_map *map)
 	free(str);
 	if (!map->map)
 	{
-		free(str);
 		ft_putstr_fd("Error\n\tSplit error\n", 2);
 		exit(1);
 	}

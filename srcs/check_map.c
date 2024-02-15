@@ -36,7 +36,6 @@ static int	ft_checkstr(t_map *map, size_t	*doors)
 			doors[0]++;
 		}
 	}
-	map->line_count++;
 	return (0);
 }
 
@@ -67,6 +66,7 @@ int	ft_check_map(t_map *map)
 	{
 		if (ft_checkstr(map, doors))
 			return (1);
+		map->line_count++;
 	}
 	if (ft_wall(map->map[map->line_count - 1]))
 		return (1);
