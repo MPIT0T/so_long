@@ -6,17 +6,17 @@
 /*   By: mpitot <mpitot@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 14:24:16 by mpitot            #+#    #+#             */
-/*   Updated: 2024/02/15 13:44:04 by mpitot           ###   ########.fr       */
+/*   Updated: 2024/02/15 13:44:22 by mpitot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "libft/incs/libft.h"
+# include "../libft/incs/libft.h"
 # include <stdbool.h>
-# include "mlx_linux/mlx.h"
-# include "mlx_linux/mlx_int.h"
+# include "../mlx_linux/mlx.h"
+# include "../mlx_linux/mlx_int.h"
 
 typedef struct s_player
 {

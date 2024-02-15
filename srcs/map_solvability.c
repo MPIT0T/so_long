@@ -6,11 +6,11 @@
 /*   By: mpitot <mpitot@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 13:40:07 by mpitot            #+#    #+#             */
-/*   Updated: 2024/02/15 13:41:11 by mpitot           ###   ########.fr       */
+/*   Updated: 2024/02/15 13:42:41 by mpitot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../includes/so_long.h"
 
 static void	ft_path_finding(char **copy, t_map *map, size_t	x, size_t y)
 {

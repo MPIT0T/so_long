@@ -6,11 +6,11 @@
 /*   By: mpitot <mpitot@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 13:16:29 by mpitot            #+#    #+#             */
-/*   Updated: 2024/02/15 13:44:04 by mpitot           ###   ########.fr       */
+/*   Updated: 2024/02/15 13:45:53 by mpitot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../includes/so_long.h"
 
 static size_t	ft_get_read_len(const char *path)
 {
