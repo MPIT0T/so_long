@@ -10,7 +10,10 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	=	main.c
+SRCS	=	main.c	\
+check_map.c			\
+map_solvability.c	\
+parsing.c			\
 
 OBJS	=	${SRCS:%.c=${OBJ_D}%.o}
 

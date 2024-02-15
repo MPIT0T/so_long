@@ -6,7 +6,7 @@
 /*   By: mpitot <mpitot@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 14:24:16 by mpitot            #+#    #+#             */
-/*   Updated: 2024/02/13 16:00:15 by mpitot           ###   ########.fr       */
+/*   Updated: 2024/02/15 13:44:04 by mpitot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,9 @@ typedef struct	s_collectible
 	size_t	y;
 
 }	t_collectible;
+
+int		ft_parse(const char *path, t_map *map);
+int	ft_solvable(t_map *map);
+int	ft_check_map(t_map *map);
 
 #endif
