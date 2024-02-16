@@ -35,6 +35,8 @@ static int	ft_checkstr(t_map *map, size_t	*doors)
 			map->player_y = map->line_count;
 			doors[0]++;
 		}
+		if (c == 'C')
+			map->c_count++;
 	}
 	return (0);
 }
@@ -58,6 +60,8 @@ int	ft_check_map(t_map *map)
 
 	map->line_len = ft_strlen(map->map[0]);
 	map->line_count = 0;
+	map->c_count = 0;
+	map->door_open = 1;
 	doors[0] = 0;
 	doors[1] = 0;
 	if (ft_wall(map->map[0]))
@@ -72,5 +76,7 @@ int	ft_check_map(t_map *map)
 		return (1);
 	if (doors[0] != 1 || doors[1] != 1)
 		return (1);
+	if (map->c_count)
+		map->door_open = 0;
 	return (ft_solvable(map));
 }

@@ -13,7 +13,8 @@
 SRCS	=	main.c	\
 check_map.c			\
 map_solvability.c	\
-parsing.c
+parsing.c			\
+movements.c
 
 OBJS	=	${SRCS:%.c=${OBJ_D}%.o}
 
