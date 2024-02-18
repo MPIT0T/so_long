@@ -6,7 +6,7 @@
 #    By: mpitot <mpitot@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/27 14:28:25 by mpitot            #+#    #+#              #
-#    Updated: 2024/02/15 13:54:46 by mpitot           ###   ########.fr        #
+#    Updated: 2024/02/18 20:55:50 by mpitot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ SRCS	=	main.c	\
 check_map.c			\
 map_solvability.c	\
 parsing.c			\
-movements.c
+movements.c			\
+ft_mlx.c
 
 OBJS	=	${SRCS:%.c=${OBJ_D}%.o}
 

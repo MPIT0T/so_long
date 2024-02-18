@@ -6,7 +6,7 @@
 /*   By: mpitot <mpitot@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 13:40:07 by mpitot            #+#    #+#             */
-/*   Updated: 2024/02/15 13:42:41 by mpitot           ###   ########.fr       */
+/*   Updated: 2024/02/18 21:06:13 by mpitot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	ft_solvable(t_map *map)
 	char	**copy;
 
 	copy = ft_mapdup(map);
-	ft_path_finding(copy, map, map->player_x, map->player_y);
+	ft_path_finding(copy, map, map->p_x, map->p_y);
 	i = -1;
 	while (copy[++i])
 	{

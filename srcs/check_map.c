@@ -31,8 +31,8 @@ static int	ft_checkstr(t_map *map, size_t	*doors)
 			return (1);
 		if (c == 'P')
 		{
-			map->player_x = i;
-			map->player_y = map->line_count;
+			map->p_x = i;
+			map->p_y = map->line_count;
 			doors[0]++;
 		}
 		if (c == 'C')
