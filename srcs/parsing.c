@@ -6,7 +6,7 @@
 /*   By: mpitot <mpitot@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 13:16:29 by mpitot            #+#    #+#             */
-/*   Updated: 2024/02/18 20:53:53 by mpitot           ###   ########.fr       */
+/*   Updated: 2024/02/20 16:32:59 by mpitot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,11 @@ static int	ft_check_double_nl(char *str)
 {
 	size_t	i;
 
+	if (!str)
+	{
+		ft_putstr_fd("Error\n\tEmpty map\n", 2);
+		exit(1);
+	}
 	i = 0;
 	while (str[i])
 	{
