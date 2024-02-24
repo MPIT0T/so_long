@@ -6,21 +6,21 @@
 /*   By: mpitot <mpitot@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 13:40:07 by mpitot            #+#    #+#             */
-/*   Updated: 2024/02/18 21:06:13 by mpitot           ###   ########.fr       */
+/*   Updated: 2024/02/24 15:17:05 by mpitot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-static void	ft_path_finding(char **copy, t_map *map, size_t	x, size_t y)
+static void	ft_path_finding(char **copy, size_t x, size_t y)
 {
 	if (copy[y][x] == '1' || copy[y][x] == '.')
 		return ;
 	copy[y][x] = '.';
-	ft_path_finding(copy, map, x - 1, y);
-	ft_path_finding(copy, map, x, y - 1);
-	ft_path_finding(copy, map, x + 1, y);
-	ft_path_finding(copy, map, x, y + 1);
+	ft_path_finding(copy, x - 1, y);
+	ft_path_finding(copy, x, y - 1);
+	ft_path_finding(copy, x + 1, y);
+	ft_path_finding(copy, x, y + 1);
 }
 
 static char	**ft_mapdup(t_map *map)
@@ -56,7 +56,7 @@ int	ft_solvable(t_map *map)
 	char	**copy;
 
 	copy = ft_mapdup(map);
-	ft_path_finding(copy, map, map->p_x, map->p_y);
+	ft_path_finding(copy, map->p_x, map->p_y);
 	i = -1;
 	while (copy[++i])
 	{
